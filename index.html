@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    // 设备类型判断
+    const system = {
+        win: false,
+        mac: false,
+        xll: false
+    }
+    //获取浏览器所搭载平台终端信息
+    const p = navigator.platform;
+
+    system.win = p.indexOf("Win") === 0;
+    system.mac = p.indexOf("Mac") === 0;
+    system.x11 = (p === "X11") || (p.indexOf("Linux") === 0);
+
+    //跳转语句，PC端进行if语句内的操作，Mobile端进行else语句内端操作
+    if (system.win || system.mac || system.xll) {
+        console.log('这是PC端');
+    } else {
+        console.log('这是Mobile端');
+    }
+
+</script>
+</body>
+</html>
